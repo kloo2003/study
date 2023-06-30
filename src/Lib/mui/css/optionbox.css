@@ -1,0 +1,115 @@
+
+.cart-floatbar {
+  position: relative;
+  height: 52px;
+}
+.cart-floatbar .cart-toolbar {
+  height: 50px;
+  width: 988px;
+  border: 1px solid #f0f0f0;
+  background: #fff;
+  position: relative;
+  left:0;
+  margin:0 auto;
+}
+.cart-floatbar .left {
+  height: 50px;
+  width: 363px;
+}
+.cart-floatbar .select-all {
+  float: left;
+  height: 50px;
+  width: 60px;
+  line-height: 50px;
+  padding: 0 0 0 9px;
+  white-space: nowrap;
+}
+.cart-floatbar .select-all .checkAll {
+  margin: 5px 3px 0 0;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+.cart-floatbar .operation {
+  float: left;
+  height: 50px;
+  line-height: 50px;
+}
+.cart-floatbar .operation a {
+  float: left;
+  margin-left: 10px;
+  color: #666;
+  text-decoration:none;
+}
+.cart-floatbar .operation a {
+  float: left;
+  margin-left: 10px;
+  color: #666;
+}
+
+.cart-floatbar .right {
+  position: absolute;
+  height: 52px;
+  right: 0;
+  top: -1px;
+  width: 670px;
+  max-width: 670px;
+}
+.cart-floatbar .right .combine {
+  float: right;
+  width: 670px;
+}
+.cart-floatbar .right .btn-area {
+  float: right;
+  height: 50px;
+}
+.cart-floatbar .btn-area .common-submit-btn, .cart-floatbar .btn-area .jdInt-submit-btn, .cart-floatbar .btn-area .jdInt-submit-btn-hd, .cart-floatbar .btn-area .submit-btn {
+  display:block;
+  position:relative;
+  width:94px;
+  height:52px;
+  background-color:rgb(244, 61, 61);
+  line-height: 52px;
+  font-size:18px ;
+  color:white;
+  text-align:center;
+  text-decoration:none;
+  overflow: hidden;
+  cursor: pointer;
+}
+.cart-floatbar .right .price-sum {
+  position: relative;
+  float: right;
+  height: 50px;
+  width: auto;
+  margin: 7px 20px 0 10px;
+} 
+.cart-floatbar .right .price-show, .cart-floatbar .right .price-sum-extra {
+  float: right;
+}
+.cart-floatbar .right .price-sum .txt {
+  width: 50px;
+  text-align: right;
+  color: #999;
+  display: inline-block;
+}
+.cart-floatbar .right .priceShow em {
+  font-size: 16px;
+  color: #e2231a;
+  font-family: verdana;
+  font-weight: 700;
+}
+.cart-floatbar .right .amount-sum {
+  float: right;
+  color: #999;
+  line-height: 20px;
+  cursor: pointer;
+}
+.cart-floatbar .right .amount-sum em {
+  color: #e2231a;
+  font-weight: 900;
+  font-family: verdana;
+  margin: 0 3px;
+}
+.block {
+  height:100px;
+}

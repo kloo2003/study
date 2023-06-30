@@ -1,0 +1,426 @@
+<template>
+
+  <!-- 商品循环列表 -->
+  <div class="mui-card">
+    <div class="mui-card-header" @click="Login()">返回主页</div>
+    <h2 style="text-align: center; font-weight: 600;">新品上市</h2>
+    <div class="mui-card-content">
+      <div class="list">
+        <div class="item" v-for="goods in goodslist" :key="goods">
+          <div class="item-l">
+            <img :src="goods.src" class="item-img" @click="out(goods)" width="200" height="200">
+
+            <div class="item-r">
+              <div class="item-title">{{ goods.title }}</div>
+              <div class="item-price">¥ {{ goods.price }}</div>
+              <div class="item-opt"><button @click='add(goods)'>加入购物车</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- 底部版权声明 -->
+   <div class="copyright">
+    <div class="copy1">
+      <div class="copy1-box">
+        <p>多</p>
+        <span>品类齐全，轻松购物</span>
+      </div>
+      <div class="copy1-box">
+        <p>快</p>
+        <span>多仓直发，急速配送</span>
+      </div>
+      <div class="copy1-box">
+        <p>好</p>
+        <span>正品行货，精致服务</span>
+      </div>
+      <div class="copy1-box">
+        <p>省</p>
+        <span>天天低价，畅选无忧</span>
+      </div>
+    </div>
+
+    <hr style="margin-top: -18px;" />
+
+    <div class="copy2">
+      <div class="copy2-box">
+        <p>购物指南</p>
+        <ul>
+          <li>购物流程</li>
+          <li>会员介绍</li>
+          <li>生活旅行/团购</li>
+          <li>常见问题</li>
+          <li>大家电</li>
+          <li>联系客服</li>
+        </ul>
+      </div>
+      <div class="copy2-box">
+        <p>配送方式</p>
+        <ul>
+          <li>上门自提</li>
+          <li>211限时达</li>
+          <li>配送服务查询</li>
+          <li>配送费收取标准</li>
+          <li>海外配送</li>
+        </ul>
+      </div>
+      <div class="copy2-box">
+        <p>支付方式</p>
+        <ul>
+          <li>货到付款</li>
+          <li>在线支付</li>
+          <li>分期付款</li>
+          <li>公司转账</li>
+        </ul>
+      </div>
+      <div class="copy2-box">
+        <p>售后服务</p>
+        <ul>
+          <li>售后政策</li>
+          <li>价格保护</li>
+          <li>退款说明</li>
+          <li>返修/退换货</li>
+          <li>取消订单</li>
+        </ul>
+      </div>
+      <div class="copy2-box">
+        <p>特色服务</p>
+        <ul>
+          <li>夺宝岛</li>
+          <li>DIY装机</li>
+          <li>延保服务</li>
+          <li>京东E卡</li>
+          <li>京东通信</li>
+          <li>京鱼座智能</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr style="margin-top: -35px;" />
+
+    <div class="copy3">
+      <p>关于我们</p>
+      <span>|</span>
+      <p>联系我们</p>
+      <span>|</span>
+      <p>联系客服</p>
+      <span>|</span>
+      <p>合作招商</p>
+      <span>|</span>
+      <p>商家帮助</p>
+      <span>|</span>
+      <p>营销中心</p>
+      <span>|</span>
+      <p>手机京东</p>
+      <span>|</span>
+      <p>友情链接</p>
+      <span>|</span>
+      <p>销售联盟</p>
+      <span>|</span>
+      <p>京东社区</p>
+      <span>|</span>
+      <p>风险检测</p>
+      <span>|</span>
+      <p>隐私政策</p>
+      <span>|</span>
+      <p>京东公益</p>
+      <span>|</span>
+      <p>Media & IR</p>
+
+    </div>
+
+    <div class="copy4">
+      <p>京公网安备11000002000088号</p>
+      <span>|</span>
+      <p>京ICP备11041704号</p>
+      <span>|</span>
+      <p>ICP</p>
+      <span>|</span>
+      <p>互联网药品信息服务资格证编号(京)-经营性-2014-0008</p>
+      <span>|</span>
+      <p>新出发京零 字第大120007号</p>
+    </div>
+
+    <div class="copy5">
+      <p>互联网出版许可证编号新出网证(京)字150号</p>
+      <span>|</span>
+      <p>出版物经营许可证</p>
+      <span>|</span>
+      <p>网络文化经营许可证京网文[2020]6112-1201号</p>
+      <span>|</span>
+      <p>违法和不良信息举报电话：4006561155</p>
+    </div>
+
+    <div class="copy6">
+      <p>Copyright © 2004 - 2023 京东JD.com 版权所有</p>
+      <span>|</span>
+      <p>消费者维权热线：4006067733 经营证照 </p>
+      <span>|</span>
+      <p>(京)网械平台备字(2018)第00003号 </p>
+      <span>|</span>
+      <p>营业执照</p>
+      <span>|</span>
+      <p>增值电信业务经营许可证</p>
+    </div>
+
+    <div class="copy7">
+      <p>京东旗下网站： 京东钱包</p>
+      <span>|</span>
+      <p>京东云 </p>
+    </div>
+
+    <div class="copy8">
+      <img src="../image/copy1.png" width="100" height="31" />
+      <img src="../image/copy2.png" width="100" height="31" />
+      <img src="../image/copy3.png" width="100" height="31" />
+      <img src="../image/copy4.png" width="100" height="32" />
+      <img src="../image/copy5.png" width="100" height="31" />
+      <img src="../image/copy6.png" width="100" height="31" />
+    </div>
+
+  </div>
+
+
+</template>
+
+<script>
+export default {
+  name: "FindView",
+  created() {
+    // 去发ajax请求获取后端的数据 赋值给vuex
+  },
+  data() {
+    return {
+    }
+  },
+  computed: {
+    goodslist() {
+      return this.$store.state.list;
+    }
+  },
+  methods: {
+    add(item) {
+      this.$store.dispatch('add', item);
+    },
+    Login() {
+      this.$router.replace('/Xiaogu')
+    },
+    out(item){
+      this.$router.replace('/Deta')
+      this.$store.dispatch('add1', item);
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+.list {
+  width: 1040px;
+  margin-left: 13.5%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5px;
+  padding-bottom: 100px;
+}
+
+.item-l {
+  width: 230px;
+  height: 380px;
+  padding: 15px;
+}
+
+.item-l:hover {
+  border: 1px solid rgb(208, 208, 208)a;
+  box-shadow: 0px 0px 3px #9a9a9a;
+}
+
+.item-img {
+  border: 1px solid #dedede;
+}
+
+.item-r {
+  width: 200px;
+  height: 160px;
+}
+
+.item-title {
+  font-size: small;
+  margin-top: 15px;
+}
+
+.item-price {
+  color: red;
+  font-weight: 600;
+  font-size: larger;
+  margin-top: 15px;
+}
+
+.item-opt {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.item-opt>button {
+  color: #6d6d6d;
+  border-radius: 5px;
+}
+
+.item-opt>button:hover {
+  background-color: red;
+  color: white;
+  font-weight: 600;
+}
+.copyright {
+  width: 100%;
+  height: 550px;
+  background-color: #ecebeb;
+}
+
+.copy1 {
+  width: 85%;
+  height: 120px;
+  margin-left: 7.5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.copy1-box {
+  width: 23%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  line-height: 105px;
+}
+
+.copy1-box p {
+  color: rgba(255, 0, 0, 0.835);
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.copy1-box span {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.777);
+  margin-left: -30px;
+}
+
+.copy2,
+.copy3,
+.copy4,
+.copy5,
+.copy6,
+.copy7,
+.copy8 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.copy2 {
+  width: 90%;
+  height: 220px;
+  margin-left: 7.5%;
+}
+
+.copy2-box {
+  width: 15%;
+}
+
+.copy2-box p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7f7f7f;
+  margin-top: 15px;
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
+
+.copy2-box li {
+  list-style: none;
+  font-size: 5px;
+  color: #7f7f7f;
+  margin-left: -20px;
+}
+
+
+.copy3 p {
+  font-size: 5px;
+  color: #555555;
+}
+
+.copy3 {
+  width: 75%;
+  height: 30px;
+  margin-left: 12%;
+}
+
+.copy4 {
+  width: 64%;
+  height: 30px;
+  margin-left: 17%;
+
+}
+
+.copy5 {
+  width: 66%;
+  height: 30px;
+  margin-left: 16%;
+  margin-top: -10px;
+}
+
+.copy6 {
+  width: 73%;
+  height: 30px;
+  margin-left: 12%;
+  margin-top: -10px;
+}
+
+.copy7 {
+  width: 15%;
+  height: 30px;
+  margin-left: 41%;
+  margin-top: -10px;
+}
+
+.copy8 {
+  width: 51%;
+  height: 50px;
+  margin-left: 22.5%;
+  margin-top: 10px;
+}
+
+.copy4 p,
+.copy5 p,
+.copy6 p,
+.copy7 p {
+  font-size: 5px;
+  color: #7f7f7f;
+}
+
+.copy3 span,
+.copy4 span,
+.copy5 span,
+.copy6 span,
+.copy7 span {
+  font-size: 4px;
+  color: #dbdbdb;
+}
+
+.copy2-box li:hover,
+.copy3 p:hover,
+.copy4 p:hover,
+.copy5 p:hover,
+.copy6 p:hover,
+.copy7 p:hover {
+  color: red;
+}
+</style>
